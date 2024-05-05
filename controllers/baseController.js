@@ -3,13 +3,13 @@ const connectToDatabase = require('../db/connect');
 const Contact = require('../db/models/contact');
 const baseController = {}
 
-// baseController.home = (req, res) => {
-//     res.send('Amy Rodriguez')
-// }
+baseController.home = (req, res) => {
+    res.send('Amy Rodriguez')
+}
 
-// baseController.self = (req, res) => {
-//     res.send('Andre Regino')
-// }
+baseController.self = (req, res) => {
+    res.send('Andre Regino')
+}
 
 baseController.getContacts = async (req, res) => {
     try {

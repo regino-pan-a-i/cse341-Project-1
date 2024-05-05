@@ -9,7 +9,7 @@
 const express = require('express');
 const app = express();
 const baseController = require('./controllers/baseController');
-const contactsRoute = require('./routes/contactsRouter.js');
+const contactsRoute = require('./routes/contactRouter.js');
 const mongoose = require('mongoose');
 const env = require("dotenv").config()
 
@@ -53,7 +53,9 @@ const env = require("dotenv").config()
  * Routes
  *************************/
 // Home Route
-app.use('/', contactsRoute)
+app.get('/', baseController.home)
+app.get('/self', baseController.self)
+app.use('/contacts', contactsRoute)
 
 
 
