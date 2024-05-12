@@ -11,6 +11,7 @@ const app = express();
 const baseController = require('./controllers/baseController');
 const contactsRoute = require('./routes/contactRouter.js');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const env = require("dotenv").config()
 
 
@@ -52,6 +53,8 @@ const env = require("dotenv").config()
 /* ***********************
  * Routes
  *************************/
+app.use(bodyParser.json());
+
 // Home Route
 app.get('/', baseController.home)
 app.get('/self', baseController.self)
