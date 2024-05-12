@@ -15,6 +15,32 @@ GET http://localhost:5050/contacts/66370aa7fc537c5e457cee55
 GET http://localhost:5050/contacts/66370aa7fc537c5e457cee56
 
 
+### POST new contact 
+POST http://localhost:5050/contacts
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "favoriteColor": "Blue",
+    "birthday": "1990-01-01"
+}
+
+### PUT update contact by ID 
+PUT http://localhost:5050/contacts/66403fccccd4209d5a1ab435
+Content-Type: application/json
+
+{
+    "firstName": "new",
+    "lastName": "Updated",
+    "email": "updated.email@example.com",
+    "favoriteColor": "Green",
+    "birthday": "1990-01-01"
+}
+
+### DELETE contact by ID 
+DELETE http://localhost:5050/contacts/66403fccccd4209d5a1ab435
 
 // PRODUCTION Deploy
 ### Get all contacts
@@ -33,3 +59,34 @@ GET https://cse341-project-1-eetk.onrender.com/contacts/66370aa7fc537c5e457cee55
 ### Get contact by id
 
 GET https://cse341-project-1-eetk.onrender.com/contacts/66370aa7fc537c5e457cee56
+
+
+### POST new contact 
+POST https://cse341-project-1-eetk.onrender.com/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "jane.doe@example.com",
+    "favoriteColor": "Red",
+    "birthday": "1995-01-01"
+}
+
+
+### PUT update contact by ID (Production)
+PUT https://cse341-project-1-eetk.onrender.com/contacts/66403fccccd4209d5a1ab435
+Content-Type: application/json
+
+{
+    "firstName": "Updated First Name",
+    "lastName": "Updated Last Name",
+    "email": "updated.email@example.com",
+    "favoriteColor": "Yellow",
+    "birthday": "1995-01-01"
+}
+
+
+### DELETE contact by ID 
+DELETE https://cse341-project-1-eetk.onrender.com/contacts/66403fccccd4209d5a1ab435
+
