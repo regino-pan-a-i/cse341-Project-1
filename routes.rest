@@ -75,12 +75,12 @@ Content-Type: application/json
 
 
 ### PUT update contact by ID (Production)
-PUT https://cse341-project-1-eetk.onrender.com/contacts/66403fccccd4209d5a1ab435
+PUT https://cse341-project-1-eetk.onrender.com/contacts/66405a7c28707f7b5235598c
 Content-Type: application/json
 
 {
-    "firstName": "Updated First Name",
-    "lastName": "Updated Last Name",
+    "firstName": "name ",
+    "lastName": "Updated ",
     "email": "updated.email@example.com",
     "favoriteColor": "Yellow",
     "birthday": "1995-01-01"
@@ -88,5 +88,5 @@ Content-Type: application/json
 
 
 ### DELETE contact by ID 
-DELETE https://cse341-project-1-eetk.onrender.com/contacts/66403fccccd4209d5a1ab435
+DELETE https://cse341-project-1-eetk.onrender.com/contacts/66405a7c28707f7b5235598c
 

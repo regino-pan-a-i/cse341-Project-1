@@ -8,11 +8,11 @@
  *******************************************/
 const express = require('express');
 const app = express();
-const baseController = require('./controllers/baseController');
-const contactsRoute = require('./routes/contactRouter.js');
-const mongoose = require('mongoose');
+const router = require('./routes/router.js');
 const bodyParser = require('body-parser');
-const env = require("dotenv").config()
+const swaggerAutogen = require('swagger-autogen')();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger-output.json');
 
 
 /* ******************************************
@@ -23,6 +23,8 @@ const env = require("dotenv").config()
 //   });
 
 // next();
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /* ***********************
  * Functions
@@ -51,25 +53,18 @@ const env = require("dotenv").config()
 
 
 /* ***********************
- * Routes
+ * Router
  *************************/
 app.use(bodyParser.json());
 
-// Home Route
-app.get('/', baseController.home)
-app.get('/self', baseController.self)
-app.use('/contacts', contactsRoute)
-
-
-
-
-
+// Send everything to the router handler
+app.use('/', router);
 
 
 /* ***********************
  * Server Listener
  *************************/
-const port = 5050
+const port = 3000;
 
 
 app.listen(process.env.PORT || port, () => {
