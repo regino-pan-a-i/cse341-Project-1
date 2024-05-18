@@ -8,7 +8,7 @@
   "host": "https://cse341-project-1-eetk.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
