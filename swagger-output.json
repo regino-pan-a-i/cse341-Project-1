@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "https://cse341-project-1-eetk.onrender.com",
+  "host": "cse341-project-1-eetk.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
