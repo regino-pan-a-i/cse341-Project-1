@@ -1,5 +1,6 @@
 const connectToDatabase = require('../db/connect');
 const Contact = require('../db/models/contact');
+require('dotenv').config();
 /************
  * Testing connections
 ******/
@@ -67,8 +68,7 @@ baseController.createContact = async (req, res) => {
     
     // Save the contact
     const savedContact = await contact.save();
-
-    res.status(201).send("This is the ID for the new contact:", savedContact._id);
+    res.status(201).send(`This is the ID for the new contact: ${savedContact._id}`);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

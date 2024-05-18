@@ -24,37 +24,22 @@ const swaggerDocument = require('./swagger-output.json');
 // next();
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-/* ***********************
- * Functions
- *************************/
-
-// async function main() {
- 
-//     const uri = process.env.DATABASE_URL;
-//     mongoose.connect(uri, {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true
-//     });
-//     const db = mongoose.connection;
-
-//     db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
-//     db.once('open', () => {
-//         console.log('Connected to MongoDB');
-//       });
-// }
-
-
-
-// main().catch(console.error);
-
-
-
+app.use(bodyParser.json());
+app
+ .use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+  );
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  next();
+ })
 /* ***********************
  * Router
  *************************/
-app.use(bodyParser.json());
+
 
 // Send everything to the router handler
 app.use('/', router);
