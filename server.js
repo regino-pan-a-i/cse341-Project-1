@@ -10,7 +10,6 @@ const express = require('express');
 const app = express();
 const router = require('./routes/router.js');
 const bodyParser = require('body-parser');
-const swaggerAutogen = require('swagger-autogen')();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger-output.json');
 

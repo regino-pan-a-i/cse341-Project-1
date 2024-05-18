@@ -1,10 +1,8 @@
-const mongoose = require('mongoose');
 const connectToDatabase = require('../db/connect');
 const Contact = require('../db/models/contact');
 /************
  * Testing connections
 ******/
-const env = require("dotenv").config()
 
 const { MongoClient, ObjectId } = require('mongodb');
 
@@ -155,7 +153,7 @@ baseController.deleteContact = async (req, res) => {
     const database = client.db('test');
     const collection = database.collection('contacts');
 
-    const result = await collection.deleteOne({ _id: new ObjectId(req.params.contact_id) }); 
+    await collection.deleteOne({ _id: new ObjectId(req.params.contact_id) }); 
     // const result = await client.db('test').collection('contacts').remove({ _id: req.params.contat_id }, true)
     
     // const contact = await collection.findOne({ _id: new ObjectId(req.params.id)});
